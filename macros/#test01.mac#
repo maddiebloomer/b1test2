@@ -1,0 +1,11 @@
+
+/vis/disable
+/gps/particle proton
+/gps/pos/type Beam
+/gps/direction 0 0 1
+/gps/ene/mono 8 GeV
+/gps/pos/centre 0 0 -1 cm
+/gps/pos/sigma_r 1 mm
+
+
+
