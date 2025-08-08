@@ -16,8 +16,10 @@ void TrackingAction::PreUserTrackingAction(const G4Track* track)
   const G4ParticleDefinition* particle = track->GetDefinition();
   int trackID = track->GetTrackID();
   int pdgID = track->GetDefinition()->GetPDGEncoding();
+  // int parentTrackID = track->GetParentID();
 
   fParentInfo[trackID] = pdgID;
+  //fHistory
 
   if (particle->GetPDGEncoding() == 211 || particle->GetPDGEncoding() ==-211) {
     int pionPDG  = particle->GetPDGEncoding();

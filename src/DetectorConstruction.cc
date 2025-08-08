@@ -126,7 +126,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   G4ThreeVector detector_pos = G4ThreeVector(0, 0, 16.05*cm);
 
   G4double d_inner_r = 0.0 ;
-  G4double d_outer_r = 3.0*mm;
+  G4double d_outer_r = 5.0*cm;
   G4double d_half_length = 0.5*mm;
   G4double d_angle_i = 0.0 ;
   G4double d_angle_f = CLHEP::twopi ;
@@ -138,11 +138,11 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   new G4PVPlacement(nullptr, detector_pos, logic_detector, "detector", logic_world, false, 0, checkOverlaps);
 
   // sensitive detector
-  G4SDManager* sdManager = G4SDManager::GetSDMpointer();
-  SensitiveDetector* sdtest = new SensitiveDetector("sdtest", fRunAction);
-  sdManager->AddNewDetector(sdtest);
-  logic_detector->SetSensitiveDetector(sdtest);
-  sdManager->Activate("sdtest", true);
+  // G4SDManager* sdManager = G4SDManager::GetSDMpointer();
+  // SensitiveDetector* sdtest = new SensitiveDetector("/sdtest", fRunAction);
+  // sdManager->AddNewDetector(sdtest);
+  // logic_detector->SetSensitiveDetector(sdtest);
+  // sdManager->Activate("sdtest", true);
 
 
   // Set cylinder  as scoring volume
@@ -154,4 +154,11 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   //
   return phys_world;
 }
+
+  void DetectorConstruction::ConstructSDandField() {
+    G4SDManager* sdManager = G4SDManager::GetSDMpointer();
+    SensitiveDetector* sdtest = new SensitiveDetector("/sdtest", fRunAction);
+    sdManager->AddNewDetector(sdtest);
+    SetSensitiveDetector("detector", sdtest);
+  }
 }

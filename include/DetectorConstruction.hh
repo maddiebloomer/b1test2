@@ -59,6 +59,8 @@ class DetectorConstruction : public G4VUserDetectorConstruction
 
     G4LogicalVolume* GetScoringVolume() const { return fScoringVolume; }
 
+    void  ConstructSDandField() override;
+
 private:
   RunAction* fRunAction;
 

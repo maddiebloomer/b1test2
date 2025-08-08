@@ -71,6 +71,8 @@ void RunAction::BeginOfRunAction(const G4Run*)
   fProtonTree->Branch("protonX", &protonX, "protonX/D");
   fProtonTree->Branch("protonY", &protonY, "protonY/D");
   fProtonTree->Branch("protonZ", &protonZ, "protonZ/D");
+  fProtonTree->Branch("protonEnergy", &protonEnergy, "protonEnergy/D");
+  fProtonTree->Branch("trackID", &trackID, "trackID/I");
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

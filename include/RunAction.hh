@@ -80,6 +80,10 @@ class RunAction : public G4UserRunAction
       protonZ = ppos.z();
     }
 
+  void SetProtonEnergy(G4double pene) { protonEnergy = pene; }
+
+  void SetTrackID(G4int tid) { trackID = tid; }
+
     TTree* GetProtonTree() const {return fProtonTree;}
 
   private:
@@ -105,6 +109,8 @@ class RunAction : public G4UserRunAction
     double protonX;
     double protonY;
     double protonZ;
+  G4double protonEnergy;
+  G4int trackID;
 };
 
 }  // namespace B1
