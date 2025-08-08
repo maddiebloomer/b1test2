@@ -9,15 +9,15 @@ namespace B1{
 
   SensitiveDetector::SensitiveDetector(G4String sdtest, RunAction* runAction)
     : G4VSensitiveDetector(sdtest), fRunAction (runAction) {
-    std::cout << "Ping from constructor\n";
+    // std::cout << "Ping from constructor\n";
   }
 
 SensitiveDetector::~SensitiveDetector(){
-  std::cout << "Ping from destructor\n";
+  // std::cout << "Ping from destructor\n";
 }
 
 G4bool SensitiveDetector::ProcessHits(G4Step* step, G4TouchableHistory* history) {
-  std::cout << "Ping!\n";
+  // std::cout << "Ping!\n";
   G4Track* track = step->GetTrack();
 
   if (track->GetDefinition()->GetPDGEncoding() != 2212)

@@ -65,4 +65,4 @@
 /gps/ene/mono 8 GeV
 /gps/pos/centre 0 0 -1 cm
 /gps/pos/sigma_r 1 mm
-/run/beamOn 10000
+/run/beamOn 10
